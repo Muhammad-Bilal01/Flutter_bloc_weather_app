@@ -1,13 +1,8 @@
-import 'dart:convert';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 import 'package:weather_app/additional_info_item.dart';
 import 'package:weather_app/bloc/weather_bloc.dart';
-import 'package:weather_app/hourly_forecast_item.dart';
-import 'package:http/http.dart' as http;
-import 'package:weather_app/secrets.dart';
 
 class WeatherScreen extends StatefulWidget {
   const WeatherScreen({super.key});
@@ -80,7 +75,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
           // To show loading indicator
           if (state is! WeatherSuccess) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }
